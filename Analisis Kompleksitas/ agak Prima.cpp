@@ -7,17 +7,20 @@ int main(){
 	cin>>n;
 	for(int i=0;i<n;i++){
 	
-	int angka,sum=2;
+	int angka,sum=2,K=0;
 	cin>>angka;
 		bool prime=true;
-		if(angka<2){
-		prime=false;	
+		if(angka<1){
+		prime=false;		
 		}
-		while(sum<trunc(sqrt(angka))){
+		while(sum<trunc(angka/2)){
 			
 			if(angka%sum==0){
+				K++;
+				if(K>2){
 				prime=false;
 				break;
+				}
 			}
 			sum++;
 		}
